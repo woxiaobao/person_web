@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo区域 -->
+        <div class="logo-section">
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="images/logo.png" alt="个人Logo">
+                </div>
+                <h1>大哥吕</h1>
+                <p class="subtitle">全栈开发者 & 设计师</p>
+            </div>
+        </div>
+
+        <!-- 项目介绍区域 -->
+        <div class="project-intro">
+            <h2>个人项目介绍</h2>
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-icon">🛒</div>
+                    <h3>供应链平台</h3>
+                    <p>基于Vue3和Spring Boot开发的现代供应链系统，支持项目和零件管理，实现产能预测和订单处理。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Vue3</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">💬</div>
+                    <h3>金融投资分析</h3>
+                    <p>使用大数据分析金融投资，提供投资建议和风险评估。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">java</span>
+                        <span class="tech-tag">hadoop</span>
+                        <span class="tech-tag">hive</span>
+                        <span class="tech-tag">spark</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <h3>AI助手系统</h3>
+                    <p>集成大语言模型的智能问答系统，提供自然语言交互和知识检索服务。</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">GLM-4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 轮播区域 -->
+        <div class="carousel-section">
+            <h2 class="carousel-title">个人图片</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel">
+                    <img src="images/4.jpg" class="slide active" alt="轮播图1">
+                    <img src="images/5.jpg" class="slide" alt="轮播图2">
+                    <img src="images/6.jpg" class="slide" alt="轮播图3">
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 中间对话区域 -->
+        <div class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2>AI智能对话</h2>
+                    <p class="chat-subtitle">基于智谱AI大语言模型</p>
+                </div>
+                <div class="messages-area" id="messagesArea">
+                    <!-- 消息将在这里动态添加 -->
+                </div>
+                <div class="input-area">
+                    <input type="text" id="messageInput" placeholder="请在这里输入你的消息">
+                    <button id="sendButton" class="send-button">
+                        <span class="send-icon">➤</span>
+                        <span class="loading-spinner"></span>
+                    </button>
+                </div>
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+        </div>
+
+        <!-- 底部社交媒体链接区域 -->
+        <div class="footer-section">
+            <div class="social-links">
+                <a href="https://github.com/woxiaobao" class="social-link" target="_blank">
+                    <span class="github-icon">🔗</span>
+                    GitHub@woxiaobao
+                </a>
+            </div>
+            <div class="copyright">
+                © 2025 大哥吕. 保留所有权利.
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html> 
