@@ -91,6 +91,7 @@ function showNextSlide() {
 }
 
 import { translations } from './i18n.js';
+import { initChat } from './chat.js';
 
 // 获取当前语言设置
 let currentLang = localStorage.getItem('language') || 'zh';
@@ -157,4 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousel = document.querySelector('.carousel');
     carousel.addEventListener('touchstart', handleTouchStart);
     carousel.addEventListener('touchend', handleTouchEnd);
+
+    // 初始化聊天功能
+    initChat();
 });
