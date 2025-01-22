@@ -3,30 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人网站</title>
+    <meta name="description" content="" data-i18n="description">
+    <meta name="keywords" content="" data-i18n="keywords">
+    <meta name="author" content="" data-i18n="author">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title data-i18n="title">个人网站</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="images/logo.png" as="image">
+    <link rel="preload" href="script.js" as="script">
+    <!-- CDN加速 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 </head>
 <body>
+    <button class="theme-toggle" id="themeToggle">🌓</button>
+    <button class="back-to-top" id="backToTop">↑</button>
+    <button class="language-toggle" id="languageToggle" aria-label="切换语言">🌐</button>
     <div class="container">
         <!-- Logo区域 -->
         <div class="logo-section">
             <div class="logo">
                 <div class="logo-image">
-                    <img src="images/logo.png" alt="个人Logo">
+                    <img src="images/logo.png" alt="个人Logo" loading="eager">
                 </div>
-                <h1>大哥吕</h1>
-                <p class="subtitle">全栈开发者 & 设计师</p>
+                <h1 data-i18n="name">大哥吕</h1>
+                <p class="subtitle" data-i18n="subtitle">全栈开发者 & 设计师</p>
             </div>
         </div>
 
         <!-- 项目介绍区域 -->
         <div class="project-intro">
-            <h2>个人项目介绍</h2>
+            <h2 data-i18n="projectIntro">个人项目介绍</h2>
             <div class="project-cards">
                 <div class="project-card">
                     <div class="project-icon">🛒</div>
-                    <h3>供应链平台</h3>
-                    <p>基于Vue3和Spring Boot开发的现代供应链系统，支持项目和零件管理，实现产能预测和订单处理。</p>
+                    <h3 data-i18n="projects.supplyChain.title">供应链平台</h3>
+                    <p data-i18n="projects.supplyChain.description">基于Vue3和Spring Boot开发的现代供应链系统，支持项目和零件管理，实现产能预测和订单处理。</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Vue3</span>
                         <span class="tech-tag">Spring Boot</span>
@@ -35,8 +48,8 @@
                 </div>
                 <div class="project-card">
                     <div class="project-icon">💬</div>
-                    <h3>金融投资分析</h3>
-                    <p>使用大数据分析金融投资，提供投资建议和风险评估。</p>
+                    <h3 data-i18n="projects.finance.title">金融投资分析</h3>
+                    <p data-i18n="projects.finance.description">使用大数据分析金融投资，提供投资建议和风险评估。</p>
                     <div class="tech-stack">
                         <span class="tech-tag">java</span>
                         <span class="tech-tag">hadoop</span>
@@ -46,8 +59,8 @@
                 </div>
                 <div class="project-card">
                     <div class="project-icon">🤖</div>
-                    <h3>AI助手系统</h3>
-                    <p>集成大语言模型的智能问答系统，提供自然语言交互和知识检索服务。</p>
+                    <h3 data-i18n="projects.ai.title">AI助手系统</h3>
+                    <p data-i18n="projects.ai.description">集成大语言模型的智能问答系统，提供自然语言交互和知识检索服务。</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Java</span>
                         <span class="tech-tag">FastAPI</span>
@@ -59,12 +72,12 @@
 
         <!-- 轮播区域 -->
         <div class="carousel-section">
-            <h2 class="carousel-title">个人图片</h2>
+            <h2 class="carousel-title" data-i18n="carouselTitle">个人图片</h2>
             <div class="carousel-wrapper">
                 <div class="carousel">
-                    <img src="images/4.jpg" class="slide active" alt="轮播图1">
-                    <img src="images/5.jpg" class="slide" alt="轮播图2">
-                    <img src="images/6.jpg" class="slide" alt="轮播图3">
+                    <img src="images/4.jpg" class="slide active" alt="轮播图1" loading="lazy">
+                    <img src="images/5.jpg" class="slide" alt="轮播图2" loading="lazy">
+                    <img src="images/6.jpg" class="slide" alt="轮播图3" loading="lazy">
                 </div>
                 <div class="carousel-dots">
                     <span class="dot active"></span>
@@ -78,14 +91,14 @@
         <div class="chat-section">
             <div class="chat-container">
                 <div class="chat-header">
-                    <h2>AI智能对话</h2>
-                    <p class="chat-subtitle">基于智谱AI大语言模型</p>
+                    <h2 data-i18n="chatTitle">AI智能对话</h2>
+                    <p class="chat-subtitle" data-i18n="chatSubtitle">基于智谱AI大语言模型</p>
                 </div>
                 <div class="messages-area" id="messagesArea">
                     <!-- 消息将在这里动态添加 -->
                 </div>
                 <div class="input-area">
-                    <input type="text" id="messageInput" placeholder="请在这里输入你的消息">
+                    <input type="text" id="messageInput" data-i18n-placeholder="inputPlaceholder" placeholder="请在这里输入你的消息">
                     <button id="sendButton" class="send-button">
                         <span class="send-icon">➤</span>
                         <span class="loading-spinner"></span>
@@ -104,10 +117,10 @@
                 </a>
             </div>
             <div class="copyright">
-                © 2025 大哥吕. 保留所有权利.
+                © 2025 <span data-i18n="name">大哥吕</span>. <span data-i18n="copyright">保留所有权利</span>.
             </div>
         </div>
     </div>
     <script type="module" src="script.js"></script>
 </body>
-</html> 
+</html>
